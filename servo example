@@ -1,10 +1,11 @@
 #include <bot_credentials.h>
 #include <memory_constraints.h>
-#include <twitch_irc_api.h>
+#include <twitch_irc_api.h> //this library needs the ArduinoWebsockets library to work, so be sure to add it. https://github.com/Links2004/arduinoWebSockets
 #include <ESP8266WiFi.h>
 #include <Servo.h>
 
-#define TOWER_SMASHER_REWARD_ID "2febfbdc-e825-4d21-b9fc-c420b35237e1"
+#define TOWER_SMASHER_REWARD_ID "" //add your custom reward id here. This can be found by selecting manage reward request in your twitch creator dashboard. Note this is only available for affiliates or partners
+
 //Twitch Api Instance
 TwitchWebsocketIRC twitch_api;
 
