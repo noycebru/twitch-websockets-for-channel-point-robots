@@ -288,7 +288,7 @@ void onCustomRewardCallback(PrivMsg data) {
 
     if (servoCount + servoOffset >= 200)
     {
-      twitch_api.send_chat_message("!booom");
+      twitch_api.send_chat_message("!boom");
       delay (1000);
       twitch_api.send_chat_message("!lights");
 
