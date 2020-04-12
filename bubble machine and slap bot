@@ -57,31 +57,7 @@ void onGlobalUserStateCallback(GlobalUserState data) {
   printf("\n---------------------------------------------------\n");
 }
 void onPrivMsgCallback(PrivMsg data) {
-  printf("\n---------------------------------------------------\n");
-  int count = 0;
-  printf("\n=PRIVMSG=\n");
-  printf("\nBadges Info\n");
-  while (data.badge_info[count].name != NULL) {
-    printf("\t-Badge Name: %s Version: %i\n", data.badge_info[count].name, data.badge_info[count].version);
-    count += 1;
-  }
-  count = 0;
-  printf("\nBadges\n");
-  while (data.badges[count].name != NULL) {
-    printf("\t-Badge Name: %s Version: %i\n", data.badges[count].name, data.badges[count].version);
-    count += 1;
-  }
-  count = 0;
-  printf("\nEmote Chat Set\n");
-  while (data.emotes[count].start_index_location != 0 && data.emotes[count].end_index_location != 0) {
-    printf("\t-Emote Id: %i\n", data.emotes[count].emote.emote_id);
-    printf("\t-Emote First Index: %i\n", data.emotes[count].start_index_location);
-    printf("\t-Emote Second Index: %i\n", data.emotes[count].end_index_location);
-    count += 1;
-  }
-  printf("Bits: %i\nColor: %s\nDisplay Name: %s\nId: %s\nMessage: %s\nMod: %i\nRoom Id: %i\nTmi Sent Ts: %s\nUser Id: %i\nChannel Name: %s\n",
-         data.bits, data.color, data.display_name, data.id, data.message, data.mod, data.room_id, data.tmi_sent_ts, data.user_id, data.channel_name);
-  printf("\n---------------------------------------------------\n");
+ 
 
   if (strstr(data.message, "following") != NULL && (strcmp(data.display_name, "StreamElements") == 0)) {
 
