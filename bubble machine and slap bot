@@ -81,14 +81,7 @@ void onPrivMsgCallback(PrivMsg data) {
     }
 
   }
-  if (strstr(data.message, "subscribed") != NULL && (strcmp(data.display_name, "StreamElements") == 0)) {
-    
-    digitalWrite(led, HIGH);
-    delay(10000);
-    digitalWrite(led, LOW);
-    delay(25);
-
-  }
+ 
 
    if (strstr(data.message, "!bubbles") != NULL && (strcmp(data.display_name, "noycebru") == 0)) {
     
@@ -186,56 +179,52 @@ void onBitsCallback(PrivMsg data) {
   printf("\n---------------------------------------------------\n");
 }
 void onSubCallback(UserNotice data) {
-  printf("\n---------------------------------------------------\n");
-  printf("\n=SUB=\n");
-  printf("Subscribers Name: %s\nTotal Months Subbed: %i\nSub Streak: %i\nSub Type: %i\nSub Plan Name: %s\nShare Sub Streak: %i\n",
-         data.display_name, data.msg_param_cumulative_months, data.msg_param_streak_months, data.msg_param_sub_plan, data.msg_param_sub_plan_name, data.msg_param_should_share_streak);
-  printf("\n---------------------------------------------------\n");
+    digitalWrite(led, HIGH);
+    delay(10000);
+    digitalWrite(led, LOW);
+    delay(25);
 }
-void onReSubCallback(UserNotice data) {
-  printf("\n---------------------------------------------------\n");
-  printf("\n=RESUB=\n");
-  printf("Subscribers Name: %s\nTotal Months Subbed: %i\nSub Streak: %i\nSub Type: %i\nSub Plan Name: %s\nShare Sub Streak: %i\n",
-         data.display_name, data.msg_param_cumulative_months, data.msg_param_streak_months, data.msg_param_sub_plan, data.msg_param_sub_plan_name, data.msg_param_should_share_streak);
-  printf("\n---------------------------------------------------\n");
+void onReSubCallback(UserNotice data){
+    digitalWrite(led, HIGH);
+    delay(10000);
+    digitalWrite(led, LOW);
+    delay(25);
 }
 void onSubGiftCallback(UserNotice data) {
-  printf("\n---------------------------------------------------\n");
-  printf("\n=SUB GIFT=\n");
-  printf("Gifters Name: %s\nTotal Months Subbed: %i\nRecipient Display Name: %s\nRecipient User Id: %i\nRecipient Username: %s\nSub Plan:%i\nSub Plan Name: %s\n",
-         data.display_name, data.msg_param_months, data.msg_param_recipient_display_name, data.msg_param_recipient_id, data.msg_param_recipient_user_name, data.msg_param_sub_plan, data.msg_param_sub_plan_name);
-  printf("\n---------------------------------------------------\n");
+   digitalWrite(led, HIGH);
+    delay(10000);
+    digitalWrite(led, LOW);
+    delay(25);
 }
 void onAnonSubGiftCallback(UserNotice data) {
-  printf("\n---------------------------------------------------\n");
-  printf("\n=ANON SUB GIFT=\n");
-  printf("Total Months Subbed: %i\nRecipient Display Name: %s\nRecipient User Id: %i\nRecipient Username: %s\nSub Plan:%i\nSub Plan Name: %s\n",
-         data.msg_param_months, data.msg_param_recipient_display_name, data.msg_param_recipient_id, data.msg_param_recipient_user_name, data.msg_param_sub_plan, data.msg_param_sub_plan_name);
-  printf("\n---------------------------------------------------\n");
+ digitalWrite(led, HIGH);
+    delay(10000);
+    digitalWrite(led, LOW);
+    delay(25);
 }
 void onSubMysteryGiftCallback(UserNotice data) {
-  printf("\n---------------------------------------------------\n");
-  printf("\n=SUB MYSTERY GIFT=\n");
-  printf("\n---------------------------------------------------\n");
+  digitalWrite(led, HIGH);
+    delay(10000);
+    digitalWrite(led, LOW);
+    delay(25);
 }
 void onGiftPaidUpgradeCallback(UserNotice data) {
-  printf("\n---------------------------------------------------\n");
-  printf("\n=GIFT PAID UPGRADE=\n");
-  printf("Number of gifts subs given: %i\n Sub Promo Name: %s\n Gifters Login: %s\n Gifters Display Name: %s\n",
-         data.msg_param_promo_gift_total, data.msg_param_promo_name, data.msg_param_sender_login, data.msg_param_sender_name);
-  printf("\n---------------------------------------------------\n");
+ digitalWrite(led, HIGH);
+    delay(10000);
+    digitalWrite(led, LOW);
+    delay(25);
 }
 void onRewardGiftCallback(UserNotice data) {
-  printf("\n---------------------------------------------------\n");
-  printf("\n=REWARD GIFT=\n");
-  printf("\n---------------------------------------------------\n");
+  digitalWrite(led, HIGH);
+    delay(10000);
+    digitalWrite(led, LOW);
+    delay(25);
 }
 void onAnonGiftPaidUpgradeCallback(UserNotice data) {
-  printf("\n---------------------------------------------------\n");
-  printf("\n=ANON GIFT PAID UPGRADE=\n");
-  printf("Number of gifts subs given: %i\n Sub Promo Name: %s\n",
-         data.msg_param_promo_gift_total, data.msg_param_promo_name);
-  printf("\n---------------------------------------------------\n");
+  digitalWrite(led, HIGH);
+    delay(10000);
+    digitalWrite(led, LOW);
+    delay(25);
 }
 void onRaidCallback(UserNotice data) {
   printf("\n---------------------------------------------------\n");
