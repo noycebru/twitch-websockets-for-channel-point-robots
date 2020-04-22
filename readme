@@ -1,3 +1,13 @@
 the above example was created using this code developed by jacob1421  https://github.com/jacob1421/Twitch-IRC-API 
 
 the code was modified from this example https://github.com/jacob1421/Twitch-IRC-API/tree/master/Example
+
+to add SSID and Password to bot_credintials.h file please copy and paste the following:
+
+#define WIFI_SSID "" 
+#define WIFI_PASS ""
+
+Also you may not be able to use the add .zip library function for this library. It's best to download and extract it to your
+arduiino libraries folder.
+
+This code is also dependent on the ArduinoWebsockets library. Please be sure to include that in your sketch. 
