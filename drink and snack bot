@@ -305,11 +305,7 @@ void onMessageCallback(WebsocketsMessage message) {
     drinkBot_RemainingCycles++;
   }
   
-  //Big Drink Reward
-  if (strcmp(chatMessageStruct.custom_reward_id, BIG_DRINK_REWARD_ID) == 0) {
-
-  }
-
+  
 
   //Snack Reward
   if (strcmp(chatMessageStruct.custom_reward_id, SNACK_REWARD_ID) == 0) {
@@ -317,18 +313,10 @@ void onMessageCallback(WebsocketsMessage message) {
   }
 
 
-  if (strcmp(chatMessageStruct.custom_reward_id, KILL_SWITCH_REWARD_ID) == 0) {
-
-    Serial.println("stop loopin cache");
-  }
-
     //Custom Reward Id
     Serial.print("Custom Reward Id:");
     Serial.println(chatMessageStruct.custom_reward_id);
-
   
-
-
   /* Debugging */
   structToString(&chatMessageStruct);
 }
