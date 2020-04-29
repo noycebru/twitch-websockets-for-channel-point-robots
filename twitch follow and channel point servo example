@@ -1,0 +1,131 @@
+#include <bot_credentials.h>
+#include <memory_constraints.h>
+#include <twitch_irc_api.h>
+#include <ESP8266WiFi.h>
+#include <Servo.h>
+
+#define SLAP_REWARD_ID "" //enter your custom reward id from twitch here. 
+//Twitch Api Instance
+TwitchWebsocketIRC twitch_api;
+
+Servo servo;
+int led = 5;
+int Slap = 12;
+
+const char* ssid = ""; //Entered in bot_credentials.h
+const char* password = ""; //Entered in bot_credentials.h
+
+/* Generic Callback Functions */
+
+void onPrivMsgCallback(PrivMsg data) {
+ 
+  if (strstr(data.message, "following") != NULL && (strcmp(data.display_name, "StreamElements") == 0)) {
+
+    for (int i = 0; i <= 0; i++) {
+
+      servo.write(180);
+      delay(200);
+
+    }
+    for (int i = 1; i <= 3; i++) {
+
+      servo.write(180);
+      delay(500);
+      servo.write(100);
+      delay(200);
+    }
+    for (int i = 3; i <= 3; i++) {
+
+      servo.write(0);
+      delay(500);
+    }
+
+  }
+ 
+   if (strstr(data.message, "!bubbles") != NULL && (strcmp(data.display_name, "noycebru") == 0)) {
+    
+    digitalWrite(led, HIGH);
+    delay(10000);
+    digitalWrite(led, LOW);
+    delay(25);
+
+  }
+}
+
+void onCustomRewardCallback(PrivMsg data) {
+  if (strcmp(data.custom_reward_id, SLAP_REWARD_ID) == 0) {
+    //Have custom message id
+    for (int i = 0; i <= 0; i++) {
+
+      servo.write(180);
+      delay(200);
+
+    }
+    for (int i = 1; i <= 3; i++) {
+
+      servo.write(180);
+      delay(500);
+      servo.write(100);
+      delay(200);
+    }
+    for (int i = 3; i <= 3; i++) {
+
+      servo.write(0);
+      delay(500);
+    }
+
+    //Custom Reward Id
+    Serial.print("Custom Reward Id:");
+    Serial.println(data.custom_reward_id);
+  }//Add here
+
+}
+
+void setup() {
+  // Connect to wifi
+  WiFi.begin(ssid, password);
+
+  // Check if connected to wifi
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(2000);
+  }
+
+  Serial.begin(9600);
+  Serial.println("Connected to Wifi.");
+
+  pinMode(led, OUTPUT);
+  pinMode(Slap, OUTPUT);
+  servo.attach(12);
+  servo.write(0);
+  delay(2000);
+
+  //Connect to twitch via websockets
+  twitch_api.connect_to_twitch_websocket();
+
+  //Register generic callbacks
+   twitch_api.onPrivMsg(onPrivMsgCallback);
+  
+  //Register custom callbacks
+    twitch_api.onCustomReward(onCustomRewardCallback);
+ 
+  //Helper Functions
+  /*
+    A sub plan is returned on subs, resub, gift, etc. You can use the helper function to convert int value to string.
+  */
+  printf("%s\n", twitch_api.sub_type_to_string(0));
+  printf("%s\n", twitch_api.sub_type_to_string(1000));
+  printf("%s\n", twitch_api.sub_type_to_string(2000));
+  printf("%s\n", twitch_api.sub_type_to_string(3000));
+  /*
+    Emotes are returned when people say them in chat or in messages when donating. You can use the function to get the image url of the icon.
+    Sizes: IMG_SMALL, IMG_MEDIUM, IMG_LARGE
+  */
+  printf("Emote Image URL: %s\n", twitch_api.get_emote_image_url(301448586, TwitchWebsocketIRC::Emote_Image_Size::IMG_MEDIUM));
+}
+
+void loop() {
+  if (twitch_api.available()) {
+    twitch_api.poll();
+  }
+  delay(500);
+}
