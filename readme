@@ -1,19 +1,19 @@
+The above examples were created using this code developed by jacob1421  https://github.com/jacob1421/Twitch-IRC-API 
+
 **MUST HAVE REQUIRE TEXT SELECTED ON FOR CHANNEL POINTS**
 
-must download all of these files for this to work: https://github.com/jacob1421/Twitch-IRC-API/tree/master/Twitch_IRC_API
+Must download all of these files for this to work: https://github.com/jacob1421/Twitch-IRC-API/tree/master/Twitch_IRC_API
 if the download zip does not work, you may have to insert this library manually into your arudino libraries folder
 
-the above example was created using this code developed by jacob1421  https://github.com/jacob1421/Twitch-IRC-API 
+All functions can be seen here if my examples are missing a function you'd like to use:
+https://github.com/jacob1421/Twitch-IRC-API/tree/master/Example
 
-the code was modified from this example https://github.com/jacob1421/Twitch-IRC-API/tree/master/Example
-
-
-to add SSID and Password to bot_credintials.h file please copy and paste the following:
+To add SSID and Password to bot_credintials.h file please copy and paste the following:
 
 #define WIFI_SSID "" 
 #define WIFI_PASS ""
 
 Also you may not be able to use the add .zip library function for this library. It's best to download and extract it to your
-arduiino libraries folder.
+Arduino libraries folder.
 
 This code is also dependent on the ArduinoWebsockets library. Please be sure to include that in your sketch. 
