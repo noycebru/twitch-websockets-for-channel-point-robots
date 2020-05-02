@@ -1,8 +1,12 @@
 **MUST HAVE REQUIRE TEXT SELECTED ON FOR CHANNEL POINTS**
 
+must download all of these files for this to work: https://github.com/jacob1421/Twitch-IRC-API/tree/master/Twitch_IRC_API
+if the download zip does not work, you may have to insert this library manually into your arudino libraries folder
+
 the above example was created using this code developed by jacob1421  https://github.com/jacob1421/Twitch-IRC-API 
 
 the code was modified from this example https://github.com/jacob1421/Twitch-IRC-API/tree/master/Example
+
 
 to add SSID and Password to bot_credintials.h file please copy and paste the following:
 
