@@ -1,3 +1,13 @@
+***During the recent Twitch update (25MAY2020) you can no longer get the reward ID as shown 
+in the Tutorial video (https://www.youtube.com/watch?v=WV1r6HaXaPY&t=118s). 
+
+A work around is to upload example code like this https://github.com/noycebru/twitch-websockets-for-channel-point-robots/blob/master/servo%20example
+
+to your device and connect it to your Twitch account. Then create your custom channel point. Then while you have everything connected 
+and the serial monitor open activate the channel point you created. The channel point reward ID will populate in serial monitor. ***
+
+***If you have issues adding the Twitch IRC library as a zip file you will have to add it to your Arduino library folder manually.***
+***This code is also dependent on the ArduinoWebsockets library. Please be sure to include that in your sketch. ***
 The above examples were created using this code developed by jacob1421  https://github.com/jacob1421/Twitch-IRC-API 
 
 **MUST HAVE REQUIRE TEXT SELECTED ON FOR CHANNEL POINTS**
@@ -13,7 +23,4 @@ To add SSID and Password to bot_credintials.h file please copy and paste the fol
 #define WIFI_SSID "" 
 #define WIFI_PASS ""
 
-Also you may not be able to use the add .zip library function for this library. It's best to download and extract it to your
-Arduino libraries folder.
-
-This code is also dependent on the ArduinoWebsockets library. Please be sure to include that in your sketch. 
+**This code is also dependent on the ArduinoWebsockets library. Please be sure to include that in your sketch. **
