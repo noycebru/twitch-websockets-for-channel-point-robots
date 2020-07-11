@@ -1,19 +1,36 @@
+******Known Issues*********************************
+You cannot use the add .zip library when downloading this library: https://github.com/jacob1421/Twitch-IRC-API/tree/master/Twitch_IRC_API
+You must add the Twitch_IRC_API folder to your arduino/libraries folder
+
+If you have issue completeing this step, and the files within Twitch_IRC_API to your local file folder, and make the includes local, for example:
+
+change this from 
+#include <bot_credentials.h>
+#include <memory_constraints.h>
+#include <twitch_irc_api.h>
+
+to
+#include "bot_credentials.h"
+#include "memory_constraints.h"
+#include "twitch_irc_api.h"
+
 ***During the recent Twitch update (25MAY2020) you can no longer get the reward ID as shown 
 in the Tutorial video (https://www.youtube.com/watch?v=WV1r6HaXaPY&t=118s). 
 
 A work around is to upload example code like this https://github.com/noycebru/twitch-websockets-for-channel-point-robots/blob/master/servo%20example
-
 to your device and connect it to your Twitch account. Then create your custom channel point. Then while you have everything connected 
-and the serial monitor open activate the channel point you created. The channel point reward ID will populate in serial monitor. ***
+and the serial monitor open activate the channel point you created. The channel point reward ID will populate in serial monitor.
 
-***If you have issues adding the Twitch IRC library as a zip file you will have to add it to your Arduino library folder manually.***
 ***This code is also dependent on the ArduinoWebsockets library. Please be sure to include that in your sketch. ***
-The above examples were created using this code developed by jacob1421  https://github.com/jacob1421/Twitch-IRC-API 
+you include this by going to Arduino IDE and selecting library manager, search for ArduinoWebsockets and install that library. 
 
 **MUST HAVE REQUIRE TEXT SELECTED ON FOR CHANNEL POINTS**
+***********************************************************************************************
 
-Must download all of these files for this to work: https://github.com/jacob1421/Twitch-IRC-API/tree/master/Twitch_IRC_API
-if the download zip does not work, you may have to insert this library manually into your arudino libraries folder
+Download all of these files for this to work: https://github.com/jacob1421/Twitch-IRC-API/tree/master/Twitch_IRC_API
+The above examples were created using this code developed by jacob1421  https://github.com/jacob1421/Twitch-IRC-API 
+
+**This code is also dependent on the ArduinoWebsockets library. Please be sure to include that in your sketch. **
 
 All functions can be seen here if my examples are missing a function you'd like to use:
 https://github.com/jacob1421/Twitch-IRC-API/tree/master/Example
@@ -22,5 +39,3 @@ To add SSID and Password to bot_credintials.h file please copy and paste the fol
 
 #define WIFI_SSID "" 
 #define WIFI_PASS ""
-
-**This code is also dependent on the ArduinoWebsockets library. Please be sure to include that in your sketch. **
